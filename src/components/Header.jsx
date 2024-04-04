@@ -1,0 +1,46 @@
+import './Header.css'
+import searchIcon from '../assets/searchIcon.png'
+import { NavLink } from 'react-router-dom'
+import { useContext, useState } from 'react';
+import { setResContext } from '../context/ResContext';
+
+function Header(){
+    //Api response state
+    const setRestlt = useContext(setResContext);
+
+    const [searchInput, setSearchInput] = useState(``);
+    const url = `https://api.unsplash.com/search/photos?page=1&query=${searchInput}&per_page=30`;
+    function handleChange(e) {
+        const { value } = e.target;
+        setSearchInput(value);
+    }
+    function handleSubmit(e) {
+        e.preventDefault();
+        getApi(); 
+    }
+    async function getApi() {
+        const responseJson = await fetch(url, {
+            method: `GET`,
+            headers: {
+                'Authorization': 'Client-ID ACCESS_KEY'
+            }
+        });
+        const response = await responseJson.json();
+        setRestlt(response);
+    }
+    return(
+        <div id="header">
+            <div id='pages'>
+                <NavLink className={({isActive})=>{ return(isActive ? "isActive" : "navButtons")}} to='/'>HOME</NavLink>
+                <NavLink className={({isActive})=>{ return(isActive ? "isActive" : "navButtons")}} to='/collections'>COLLECTIONS</NavLink>
+                <NavLink className={({isActive})=>{ return(isActive ? "isActive" : "navButtons")}} to='/about'>ABOUT</NavLink>
+            </div>
+            <form id='getSearch' onSubmit={handleSubmit}>
+                <input id='searchField' value={searchInput} onChange={handleChange} type='text' placeholder='Search...' />
+                <button id='searchButton'><img id='searchButtonImage' src={searchIcon} /></button>
+            </form>
+        </div>
+    )
+}
+
+export default Header

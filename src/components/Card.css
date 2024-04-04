@@ -1,0 +1,59 @@
+.titleBar{
+    display: flex;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    color: rgb(94, 94, 94);
+}
+#like{
+    height: 14px;
+}
+#card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 380px;
+    width: 350px;
+    /* background-color: green;
+    border: 1px solid black; */
+}
+#infoBlock{
+    height: 300px;
+    width: 300px;
+}
+#info{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    padding: 20px;
+    position: absolute;
+    height: 260px;
+    width: 260px;
+    border-radius: 10px;
+    background: linear-gradient(transparent, black);
+    color: white;
+    opacity: 0;
+    transition: all;
+    transition-duration: 1s;
+}
+#info:hover{
+    opacity: 1;
+}
+#imgs{
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+#countLike{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 30px;
+    width: 83%;
+    /* background-color: aqua; */
+}

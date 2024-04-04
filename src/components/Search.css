@@ -1,0 +1,16 @@
+#divider{
+    width: 100vw;
+    height: 14vh;
+    padding: 5px 0 5px 0;
+    background-color: rgb(255, 255, 255);
+}
+#Search{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    height: fit-content;
+    /* background-color: aquamarine; */
+}
