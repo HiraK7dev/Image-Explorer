@@ -13,7 +13,7 @@ function Search() {
             <div id="Search">
                 {
                     Restlt.results.map((res) => {
-                        return <Card desc={res.description} img={res.urls.small_s3} title={res.user.first_name} likeNum={res.likes}/>
+                        return <Card desc={res.alt_description} img={res.urls.small_s3} title={res.user.first_name} likeNum={res.likes}/>
                     })
                 }
             </div>

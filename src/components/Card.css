@@ -12,10 +12,15 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 380px;
+    height: 370px;
     width: 350px;
-    /* background-color: green;
-    border: 1px solid black; */
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    margin: 25px 30px 25px 30px;
 }
 #infoBlock{
     height: 300px;
@@ -53,7 +58,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    height: 30px;
+    height: 20px;
     width: 83%;
     /* background-color: aqua; */
 }

@@ -6,10 +6,8 @@
     width: 100vw;
     height: 10vh;
     padding: 5px 0 5px 0;
-    background: rgba(0, 0, 0, 0.17);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(11.6px);
-    -webkit-backdrop-filter: blur(11.6px);
+    background-color: #000000;
+    z-index: 1;
 }
 #pages{
     display: flex;
@@ -30,10 +28,12 @@
     aspect-ratio: 1/1;
     border: 1px solid transparent;
     border-radius: 100%;
-    background: rgba(255, 255, 255, 0.52);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(13.2px);
-    -webkit-backdrop-filter: blur(13.2px);
+    background-color: rgb(255, 255, 255);
+    transition: all;
+    transition-duration: 1s;
+}
+#searchButton:hover{
+    box-shadow: 0 0 30px 2px #ffffff;
 }
 #searchButtonImage{
     height: 20px;
@@ -44,19 +44,26 @@
     width: 70%;
     border: 1px solid transparent;
     border-radius: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+    outline: none;
     padding: 0 10px 0 10px;
-    background: rgba(255, 255, 255, 0.52);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(13.2px);
-    -webkit-backdrop-filter: blur(13.2px);
+    background-color: rgb(255, 255, 255);
+    transition: all;
+    transition-duration: 1s;
+}
+#searchField:focus{
+    box-shadow: 0 0 50px 2px #b6b6b6;
 }
 .navButtons{
-    color: rgb(172, 172, 172);
+    color: rgb(255, 255, 255);
     transition: all;
     transition-duration: 1s;
 }
 .navButtons:hover{
-    color: #4e4e4e;
+    color: #ffffff56;
+    text-shadow: 5px 5px 10px;
 }
 .navButtons, .isActive{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -68,8 +75,5 @@
     color: rgb(46, 46, 46);
     padding: 8px 20px 8px 20px;
     border-radius: 18px;
-    background: rgba(255, 255, 255, 0.52);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(13.2px);
-    -webkit-backdrop-filter: blur(13.2px);
+    background-color: white;
 }

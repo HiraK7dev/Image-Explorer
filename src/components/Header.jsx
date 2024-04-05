@@ -9,7 +9,7 @@ function Header(){
     const setRestlt = useContext(setResContext);
 
     const [searchInput, setSearchInput] = useState(``);
-    const url = `https://api.unsplash.com/search/photos?page=1&query=${searchInput}&per_page=30`;
+    const url = `https://api.unsplash.com/search/photos?page=1&query=${searchInput}&per_page=28`;
     function handleChange(e) {
         const { value } = e.target;
         setSearchInput(value);
@@ -22,7 +22,7 @@ function Header(){
         const responseJson = await fetch(url, {
             method: `GET`,
             headers: {
-                'Authorization': 'Client-ID ACCESS_KEY'
+                'Authorization': 'Client-ID YOUR_ACCESS_KEY'
             }
         });
         const response = await responseJson.json();

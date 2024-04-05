@@ -15,14 +15,14 @@ function Home() {
         <Header />
           {
             res ? <div id='searchData'><Search/></div> : 
-            <>
+            <div id='bg'>
               <div id='Home'>
                 <div id='title'>
-                  <h1 id='titleName'>Image<br/>Explorer</h1>
+                  <h1 id='titleName'>Image<br/>Explorer</h1><br />
                   <p id='titleSubname'>&nbsp;Change the way you experience</p>
                 </div>
               </div>
-            </>
+            </div>
           }
       </ResContext.Provider>
     </setResContext.Provider>
