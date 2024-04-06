@@ -1,6 +1,6 @@
 import Card from './Card'
 import { useContext } from 'react';
-import { ResContext } from '../context/ResContext';
+import { ResContext } from '../context/Context';
 import './Search.css'
 
 function Search() {

@@ -2,11 +2,13 @@ import './Header.css'
 import searchIcon from '../assets/searchIcon.png'
 import { NavLink } from 'react-router-dom'
 import { useContext, useState } from 'react';
-import { setResContext } from '../context/ResContext';
+import { setResContext, setLoader, setError } from '../context/Context';
 
 function Header(){
     //Api response state
     const setRestlt = useContext(setResContext);
+    const setisLoading = useContext(setLoader);
+    const setisError = useContext(setError);
 
     const [searchInput, setSearchInput] = useState(``);
     const url = `https://api.unsplash.com/search/photos?page=1&query=${searchInput}&per_page=28`;
@@ -19,14 +21,20 @@ function Header(){
         getApi(); 
     }
     async function getApi() {
-        const responseJson = await fetch(url, {
-            method: `GET`,
-            headers: {
-                'Authorization': 'Client-ID YOUR_ACCESS_KEY'
-            }
-        });
-        const response = await responseJson.json();
-        setRestlt(response);
+        setisLoading(1);
+        try {
+            const responseJson = await fetch(url, {
+                method: `GET`,
+                headers: {
+                    'Authorization': 'Client-ID YOUR_ACCESS_KEY'
+                }
+            });
+            const response = await responseJson.json();
+            setRestlt(response);
+        } catch (error) {
+            setisError(1);
+        }
+        setisLoading(0);
     }
     return(
         <div id="header">
