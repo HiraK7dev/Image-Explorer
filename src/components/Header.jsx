@@ -26,7 +26,7 @@ function Header(){
             const responseJson = await fetch(url, {
                 method: `GET`,
                 headers: {
-                    'Authorization': 'Client-ID YOUR_ACCESS_KEY'
+                    'Authorization': import.meta.env.VITE_API_KEY
                 }
             });
             const response = await responseJson.json();
