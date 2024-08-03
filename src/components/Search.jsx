@@ -1,5 +1,5 @@
 import Card from './Card'
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { ResContext } from '../context/Context';
 import './Search.css'
 
@@ -12,7 +12,7 @@ function Search() {
             <div id="divider"></div>
             <div id="Search">
                 {
-                    Restlt.results.map((res) => {
+                    Restlt?.results?.map((res) => {
                         return <Card desc={res.alt_description} img={res.urls.small_s3} title={res.user.first_name} likeNum={res.likes}/>
                     })
                 }

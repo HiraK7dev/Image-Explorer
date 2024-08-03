@@ -26,7 +26,7 @@ function Header(){
             const responseJson = await fetch(url, {
                 method: `GET`,
                 headers: {
-                    'Authorization': import.meta.env.VITE_API_KEY
+                    'Authorization': `Client-ID ${import.meta.env.VITE_API_KEY}`
                 }
             });
             const response = await responseJson.json();
@@ -40,7 +40,7 @@ function Header(){
         <div id="header">
             <div id='pages'>
                 <NavLink className={({isActive})=>{ return(isActive ? "isActive" : "navButtons")}} to='/'>HOME</NavLink>
-                <NavLink className={({isActive})=>{ return(isActive ? "isActive" : "navButtons")}} to='/collections'>COLLECTIONS</NavLink>
+                {/* <NavLink className={({isActive})=>{ return(isActive ? "isActive" : "navButtons")}} to='/collections'>COLLECTIONS</NavLink> */}
                 <NavLink className={({isActive})=>{ return(isActive ? "isActive" : "navButtons")}} to='/about'>ABOUT</NavLink>
             </div>
             <form id='getSearch' onSubmit={handleSubmit}>
